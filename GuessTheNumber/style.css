@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap");
 
 * {
   margin: 0;
@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  font-family: 'Press Start 2P', sans-serif;
+  font-family: "Press Start 2P", sans-serif;
   color: #eee;
   background-color: #222;
   /* background-color: #60b347; */
@@ -44,7 +44,10 @@ main {
   width: 52rem;
   font-size: 2rem;
 }
-
+.header {
+  padding: 20px;
+  margin: 20px;
+}
 /* ELEMENTS STYLE */
 h1 {
   font-size: 4rem;
@@ -54,6 +57,7 @@ h1 {
   top: 52%;
   left: 50%;
   transform: translate(-50%, -50%);
+  margin: 2px;
 }
 
 .hotORCold {
@@ -64,9 +68,18 @@ h1 {
   padding: 3rem 0rem;
   text-align: center;
   position: absolute;
+
   bottom: 0;
   left: 50%;
   transform: translate(-50%, 50%);
+}
+.emoji {
+  line-height: 1;
+}
+.hotORCold::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .between {
@@ -110,8 +123,9 @@ h1 {
 }
 
 .message {
-  margin-bottom: 8rem;
+  margin-bottom: 10rem;
   height: 3rem;
+  line-height: 1.8;
 }
 
 .label-score {
