@@ -43,7 +43,13 @@ function reset(flag) {
 
 document.querySelector(".check").addEventListener("click", () => {
   let guess = Number(document.querySelector(".guess").value);
-
+  if(currentScore <= 0){
+    range = objectMatch("☹️","You Lost",currentScore)
+    document.querySelector(".emoji").textContent = range.emotion;
+    document.querySelector(".message").textContent = range.description;
+    document.querySelector(".score").textContent = range.score;
+    return
+  }
   if (!guess) {
     console.log("⛔️ No Number!");
     range = objectMatch();
@@ -73,12 +79,14 @@ document.querySelector(".check").addEventListener("click", () => {
         ? objectMatch("🥶", "You're very cold", --currentScore)
         : objectMatch("☃️", "You're freezing!", --currentScore);
   }
+
   document.querySelector(".emoji").textContent = range.emotion;
   document.querySelector(".message").textContent = range.description;
   document.querySelector(".score").textContent = range.score;
   if (range.won) {
     reset("won");
   }
+
 });
 
 document.querySelector(".again").addEventListener("click", function () {
